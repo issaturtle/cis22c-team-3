@@ -20,13 +20,14 @@ using namespace std;
 class Sort {
 	
 
-private:
+    
+public:
+    
     //unsorted vectors for testing
     vector<double> data;
     vector<double> sortedData;
     vector<double> reverseSortedData;
     
-public:
 	Sort();
 
     void readFile(string filename, vector<double> vect);

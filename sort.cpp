@@ -61,7 +61,7 @@ void Sort::shellSort(vector<double> v) {
         }
     }
     
-	print(vect);
+    print(vect);
 }
 
 void Sort::quickSort(vector<double> v) {

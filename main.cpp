@@ -16,6 +16,7 @@ int main() {
     Sort test;
 
     
+    test.shellSort(test.data);
     
     return 0;
 }
