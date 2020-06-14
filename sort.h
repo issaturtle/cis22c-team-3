@@ -1,38 +1,40 @@
 /*
-       CIS 22C, DE ANZA
-       Team Project Group 3
-       Jeffery Abbott
-       Nicolas Chun
-       Michael Ekman
-       Hung Nguyen
-       Huu Hau Nguyen
-*/
+		CIS 22C, DE ANZA
+		Team Project Group 3
+		Jeffery Abbott
+		Nicolas Chun
+		Michael Ekman
+		Hung Nguyen
+		Huu Hau Nguyen
+ */
+#pragma once
+#ifndef SORT_H
+#define SORT_H
 
-#ifndef sort_h
-#define sort_h
+#include <vector>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
-
-struct Node {
-    double value;
-    Node *next;
-};
-
-
 class Sort {
-    
-private:
-    Node *sampleData;
-    Node *sampleDataSorted;
-    Node *sampleDataSortedReverse;
-    
-    void insertNode(Node *front, double newValue);
-    
-public:
-    Sort();
-    void readDataFromFile(Node *targetLinkedList, string filename);
-    
-};
+	void readFile(string filename, vector<double> vect);
 
-#endif /* sort_h */
+public:
+	//unsorted vectors for testing
+	vector<double> data;
+	vector<double> sortedData;
+	vector<double> reverseSortedData;
+
+	Sort();
+
+	void swap(vector<double>, double, double);
+	void print(vector<double>);
+
+	void insertionSort(vector<double>);
+	void shellSort(vector<double>);
+	void quickSort(vector<double>);
+	void heapSort(vector<double>);
+	void selectionSort(vector<double>);
+};
+#endif
