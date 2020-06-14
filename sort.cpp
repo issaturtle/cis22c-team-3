@@ -10,7 +10,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "Sort.h"
+#include "sort.h"
 
 using namespace std;
 
@@ -48,6 +48,21 @@ void Sort::selectionSort(vector<double> v) {
 void Sort::shellSort(vector<double> v) {
 	vector<double> vect = v;
 	//shellsort
+    
+    long size = vect.size();
+    for (int gap = 2; gap > 0; gap /= 2)
+    {
+        for (int i = gap; i < size; i += 1)
+        {
+            double temp = vect[i];
+            int j;
+            for (j = i; j >= gap && vect[j - gap] > temp; j -= gap) {
+                vect[j] = vect[j - gap];
+            }
+            vect[j] = temp;
+        }
+    }
+    
 	print(vect);
 }
 
