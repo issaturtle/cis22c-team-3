@@ -30,7 +30,7 @@ public:
     
 	Sort();
 
-    void readFile(string filename, vector<double> vect);
+    void readFile(string filename, vector<double> &vect);
 	void swap(vector<double>, double, double);
 	void print(vector<double>);
 

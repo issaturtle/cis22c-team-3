@@ -16,21 +16,22 @@ using namespace std;
 
 Sort::Sort() {
 	readFile("sampleData.txt", data);
-	readFile("sampleDataSorted.txt", sortedData);
-	readFile("sampleDataSortedReverse.txt", reverseSortedData);
+    readFile("sampleDataSorted.txt", sortedData);
+    readFile("sampleDataSortedReverse.txt", reverseSortedData);
 }
 
-void Sort::readFile(string fileName, vector<double> vect) {
+void Sort::readFile(string fileName, vector<double> &vect) {
 	ifstream fileReader(fileName);
 	if (fileReader.is_open()) {
 		double num;
 		while (fileReader >> num) {
 			vect.push_back(num);
 		}
+        fileReader.close();
 	} else {
 		cout << "ERROR reading file " << fileName << endl;
 	}
-	fileReader.close();
+	
 }
 
 void Sort::insertionSort(vector<double> v) {
@@ -60,7 +61,6 @@ void Sort::shellSort(vector<double> v) {
             vect[j] = temp;
         }
     }
-    
     print(vect);
 }
 
