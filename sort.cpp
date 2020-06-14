@@ -50,10 +50,8 @@ void Sort::shellSort(vector<double> v) {
 	//shellsort
     
     long size = vect.size();
-    for (int gap = 2; gap > 0; gap /= 2)
-    {
-        for (int i = gap; i < size; i += 1)
-        {
+    for (int gap = 2; gap > 0; gap /= 2) {
+        for (int i = gap; i < size; i += 1) {
             double temp = vect[i];
             int j;
             for (j = i; j >= gap && vect[j - gap] > temp; j -= gap) {
