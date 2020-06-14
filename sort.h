@@ -18,16 +18,18 @@
 using namespace std;
 
 class Sort {
-	void readFile(string filename, vector<double> vect);
+	
 
+private:
+    //unsorted vectors for testing
+    vector<double> data;
+    vector<double> sortedData;
+    vector<double> reverseSortedData;
+    
 public:
-	//unsorted vectors for testing
-	vector<double> data;
-	vector<double> sortedData;
-	vector<double> reverseSortedData;
-
 	Sort();
 
+    void readFile(string filename, vector<double> vect);
 	void swap(vector<double>, double, double);
 	void print(vector<double>);
 
