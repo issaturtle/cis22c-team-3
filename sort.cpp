@@ -33,7 +33,6 @@ void Sort::readDataFromFile(Node *targetLinkedList, string filename) {
         double number;
         while(sampleDataFile >> number) {
             insertNode(targetLinkedList, number);
-            cout << number << endl;
         }
     }
     else {
