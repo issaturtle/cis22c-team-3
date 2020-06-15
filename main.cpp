@@ -19,14 +19,17 @@ int main() {
     Sort test;
     
     string testName;
+    auto startTime = chrono::high_resolution_clock::now();
+    auto stopTime = chrono::high_resolution_clock::now();
+    chrono::duration<double, std::milli> millis;
 
     
     // run tests and get times for shell sort
     testName = "shell sort, random sample";
-    auto startTime = chrono::high_resolution_clock::now();
+    startTime = chrono::high_resolution_clock::now();
     test.shellSort(test.data);
-    auto stopTime = chrono::high_resolution_clock::now();
-    std::chrono::duration<double, std::milli> millis = stopTime - startTime;
+    stopTime = chrono::high_resolution_clock::now();
+    millis = stopTime - startTime;
     results.insert({ testName, (double)millis.count() });
     
     testName = "shell sort, sorted sample";
@@ -45,8 +48,8 @@ int main() {
     
     
     // print results to confirm everything is working, remove this later
-    for(auto testItem : results) {
-        std::cout << testItem.first << " " << testItem.second << endl;
+    for (auto testItem : results) {
+        cout << testItem.first << " " << testItem.second << endl;
     }
     
     return 0;
