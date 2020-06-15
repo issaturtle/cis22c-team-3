@@ -35,8 +35,16 @@ void Sort::readFile(string fileName, vector<double> &vect) {
 }
 
 void Sort::insertionSort(vector<double> v) {
-	vector<double> vect = v;
-	//insertionsort
+	long size = vect.size();
+	double temp;
+	int i, j;
+	for (i = 1; i < size; ++i) {
+   	 temp = vect[i];
+    	 for (j = i; j>0 && vect[j - 1] > temp; j--) {
+        	vect[j] = vect[j-1];
+   	 }
+    	vect[j] = temp;
+	}
 	print(vect);
 }
 
